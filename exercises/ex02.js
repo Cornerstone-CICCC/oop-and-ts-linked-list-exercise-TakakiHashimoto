@@ -1,10 +1,18 @@
 // Create a function called deleteAllNodesWithValue that removes all nodes with a specific value
 // Make sure to update the size of the list as well
 
-const DLL = require('../lib/DLL');
+const DLL = require("../lib/DLL");
 
 function deleteAllNodesWithValue(list, value) {
   // your code here
+  let currectlyOn = list.head;
+  while (currectlyOn !== null) {
+    if (currectlyOn.data === value) {
+      currectlyOn.prev.next = currectlyOn.next;
+      list.setSize = list.length - 1;
+    }
+    currectlyOn = currectlyOn.next;
+  }
 }
 
 const list = new DLL();
